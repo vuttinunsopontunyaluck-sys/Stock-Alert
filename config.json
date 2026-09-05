@@ -1,0 +1,33 @@
+{
+  "_readme": "แก้ไขไฟล์นี้เพื่อเพิ่ม/ลบ/เปลี่ยนหุ้นและเป้าหมายราคา ได้ตลอดเวลา (สูงสุด 5 targets ต่อหุ้น)",
+  "watchlist": [
+    {
+      "symbol": "NVDA",
+      "market": "US",
+      "yf_ticker": "NVDA",
+      "currency": "USD",
+      "targets": [
+        {
+          "id": 1,
+          "price": 229.90,
+          "condition": "above",
+          "achieved": false
+        }
+      ]
+    },
+    {
+      "symbol": "PTT",
+      "market": "TH",
+      "yf_ticker": "PTT.BK",
+      "currency": "THB",
+      "targets": [
+        {
+          "id": 1,
+          "price": 30.00,
+          "condition": "below",
+          "achieved": false
+        }
+      ]
+    }
+  ]
+}

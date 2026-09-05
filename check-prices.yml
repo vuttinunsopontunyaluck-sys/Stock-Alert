@@ -1,0 +1,42 @@
+name: Check stock price targets
+
+on:
+  schedule:
+    # รันทุก 10 นาที (UTC) — ปรับความถี่ได้ตามต้องการ
+    - cron: "*/10 * * * *"
+  workflow_dispatch: {}   # ให้กดรันเองได้จากแท็บ Actions เพื่อทดสอบ
+
+permissions:
+  contents: write   # ต้องเขียนไฟล์ config.json กลับเข้า repo ได้
+
+jobs:
+  check-prices:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run price check
+        env:
+          LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+        run: python check_prices.py
+
+      - name: Commit updated config.json (if changed)
+        run: |
+          git config user.name "stock-alert-bot"
+          git config user.email "actions@github.com"
+          if ! git diff --quiet -- config.json; then
+            git add config.json
+            git commit -m "Update achieved targets [skip ci]"
+            git push
+          else
+            echo "ไม่มีการเปลี่ยนแปลงใน config.json"
+          fi
