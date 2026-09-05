@@ -16,14 +16,14 @@
       ]
     },
     {
-      "symbol": "PTT",
+      "symbol": "AMARC",
       "market": "TH",
-      "yf_ticker": "PTT.BK",
+      "yf_ticker": "AMARC.BK",
       "currency": "THB",
       "targets": [
         {
           "id": 1,
-          "price": 30.00,
+          "price": 3.02,
           "condition": "below",
           "achieved": false
         }
