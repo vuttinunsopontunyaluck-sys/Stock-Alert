@@ -2,8 +2,8 @@ name: Check stock price targets
 
 on:
   schedule:
-    # รันทุก 10 นาที (UTC) — ปรับความถี่ได้ตามต้องการ
-    - cron: "*/10 * * * *"
+    # รันทุก 15 นาที (UTC) — ปรับความถี่ได้ตามต้องการ
+    - cron: "*/15 * * * *"
   workflow_dispatch: {}   # ให้กดรันเองได้จากแท็บ Actions เพื่อทดสอบ
 
 permissions:
