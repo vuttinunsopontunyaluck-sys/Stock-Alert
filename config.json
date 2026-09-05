@@ -27,6 +27,12 @@
           "condition": "below",
           "achieved": false
         }
+        {
+          "id": 2,
+          "price": 3.00,
+          "condition": "below",
+          "achieved": false
+        }
       ]
     }
   ]
