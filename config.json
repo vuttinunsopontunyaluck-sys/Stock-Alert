@@ -16,6 +16,20 @@
       ]
     },
     {
+      "symbol": "AAPL",
+      "market": "US",
+      "yf_ticker": "AAPL",
+      "currency": "USD",
+      "targets": [
+        {
+          "id": 1,
+          "price": 319.00,
+          "condition": "below",
+          "achieved": false
+        }
+      ]
+    },
+    {
       "symbol": "AMARC",
       "market": "TH",
       "yf_ticker": "AMARC.BK",
